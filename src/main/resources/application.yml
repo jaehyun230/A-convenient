@@ -1,0 +1,41 @@
+server:
+  port: 8090
+
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.apache.coyote.http11: debug #Http 요청정보 로그 남기기
+
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        highlight_sql: true
+
+    hibernate:
+      ddl-auto: create
+
+oauth:
+  kakao:
+    client_id: 36fa3eeae0e576bd2aa9b51d02bdf569
+    redirect_uri: http://localhost:3000//oauth/redirected/kakao
+    client_secret: 12uEyZAxA3vf6N5yncLHTLapBh5rRkzF
+    scope:
+      - profile_nickname
+      - profile_image
+      - account_email
+  naver:
+    client_id: QVZm1CjlFclxhgXGQR6p
+    redirect_uri:  http://localhost:3000/oauth/redirected/naver
+    client_secret: r9UxUM_6sT
+    scope:
+      - nickname
+      - profile_image
+  google:
+    client_id: 1035916317996-he0ph00cd7bl5tdfaiu4c65c1bv91mmv.apps.googleusercontent.com
+    redirect_uri: http://localhost:3000/oauth/redirected/google
+    client_secret: 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
+    scope: profile email https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/directory.readonly
