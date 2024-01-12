@@ -1,6 +1,6 @@
-package myProject.service.Scraper.presentation;
+package myProject.service.scraper.presentation;
 
-import myProject.service.Scraper.service.ScraperService;
+import myProject.service.scraper.service.ScraperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
