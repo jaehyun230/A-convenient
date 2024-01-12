@@ -31,7 +31,9 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok'
 
-	runtimeOnly 'com.h2database:h2'
+//	runtimeOnly 'com.h2database:h2'
+
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
 	// FOR @ConfigurationProperties
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
@@ -40,6 +42,10 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.rest-assured:rest-assured:5.3.0'
+
+	//selenium
+	implementation 'org.seleniumhq.selenium:selenium-java:4.7.2'
+
 }
 
 tasks.named('test') {

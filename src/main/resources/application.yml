@@ -16,7 +16,13 @@ spring:
         highlight_sql: true
 
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mariadb://localhost:3309/myproject?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: maria
+    driver-class-name: org.mariadb.jdbc.Driver
 
 oauth:
   kakao:
