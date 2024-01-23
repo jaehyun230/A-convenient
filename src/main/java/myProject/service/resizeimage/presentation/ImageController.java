@@ -1,6 +1,7 @@
 package myProject.service.resizeimage.presentation;
 
 import myProject.service.resizeimage.service.ImageResizeService;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,6 +16,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/image")
@@ -31,20 +34,8 @@ public class ImageController {
                                           @RequestParam("width") int width,
                                           @RequestParam("height") int height) {
         try {
-            List<InputStreamResource> resizedImages = new ArrayList<>();
-
-            for (MultipartFile file : files) {
-                byte[] resizedImageBytes = imageResizeService.resizeImage(file, width, height);
-                resizedImages.add(new InputStreamResource(new ByteArrayInputStream(resizedImageBytes)));
-            }
-
-            // 로직에 따라 여러 이미지를 반환하는 방식을 결정하세요. 예를 들어, zip 파일로 묶거나,
-            // 각각의 이미지를 반환할 수 있습니다.
-
-            return ResponseEntity
-                    .ok()
-                    .contentType(MediaType.IMAGE_JPEG)
-                    .body(resizedImages);
+            imageResizeService.resizeImage(files, width, height);
+            return ResponseEntity.ok("이미지 리사이즈 완료");
         } catch (IOException e) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
