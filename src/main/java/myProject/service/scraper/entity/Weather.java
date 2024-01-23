@@ -1,4 +1,4 @@
-package myProject.service.Scraper.entity;
+package myProject.service.scraper.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

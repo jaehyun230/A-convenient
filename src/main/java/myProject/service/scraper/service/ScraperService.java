@@ -1,4 +1,4 @@
-package myProject.service.Scraper.service;
+package myProject.service.scraper.service;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,6 +1,6 @@
-package myProject.service.Scraper.repository;
+package myProject.service.scraper.repository;
 
-import myProject.service.Scraper.entity.Weather;
+import myProject.service.scraper.entity.Weather;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.sql.Timestamp;
